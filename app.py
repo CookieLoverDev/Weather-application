@@ -18,11 +18,6 @@ class WeatherApp:
         self.root.resizable(0, 0)
         self.root.title('Weather')
 
-        self.city = ""
-        self.weather = ""
-        self.temperature = ""
-        self.windspeed = ""
-
         self.search_frame = self.create_search_frame()
         self.info_frame = self.create_info_frame()
 
@@ -56,22 +51,22 @@ class WeatherApp:
         button.grid(row=1, column=1, padx=5, pady=5)
 
     def create_city_label(self):
-        city_label = tk.Label(self.info_frame, font=DEFAULT_FONT, text=f"{self.city}")
+        city_label = tk.Label(self.info_frame, font=DEFAULT_FONT)
         city_label.pack()
 
-        weather_label = tk.Label(self.info_frame, font=DEFAULT_FONT, text=f"{self.weather}")
+        weather_label = tk.Label(self.info_frame, font=DEFAULT_FONT)
         weather_label.pack()
 
-        temperature_label = tk.Label(self.info_frame, font=DEFAULT_FONT, text=f"{self.temperature}")
+        temperature_label = tk.Label(self.info_frame, font=DEFAULT_FONT)
         temperature_label.pack()
 
-        windspeed_label = tk.Label(self.info_frame, font=DEFAULT_FONT, text=f"{self.windspeed}")
+        windspeed_label = tk.Label(self.info_frame, font=DEFAULT_FONT)
         windspeed_label.pack()
 
         return city_label, weather_label, temperature_label, windspeed_label
 
     def update_weather(self):
-        api = "Your API"
+        api = "f88d535ada07c9c36339933b2adbd263"
         city = self.search.get()
         url = f"http://api.openweathermap.org/geo/1.0/direct?q={city}&limit=1&appid={api}"
 
