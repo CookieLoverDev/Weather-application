@@ -66,7 +66,7 @@ class WeatherApp:
         return city_label, weather_label, temperature_label, windspeed_label
 
     def update_weather(self):
-        api = "f88d535ada07c9c36339933b2adbd263"
+        api = "Your API"
         city = self.search.get()
         url = f"http://api.openweathermap.org/geo/1.0/direct?q={city}&limit=1&appid={api}"
 
